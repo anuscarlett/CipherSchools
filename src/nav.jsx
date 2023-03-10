@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import cipher from "./img/logo.png";
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import FlashlightOnRoundedIcon from '@mui/icons-material/FlashlightOnRounded';
 
 const Container=styled.div`
-background-color:#202020;
-color:white;
+background-color:${({theme})=>theme.bg};
+color:${({theme})=>theme.text};
 height:100px;
 width:100vw;
+display:flex;
+justify-content:center;
+align-items:center;
 `;
 const Wrapper=styled.div``;
 const Logo=styled.div`
@@ -18,16 +23,16 @@ padding:10px;
 `;
 const Img=styled.img`
 display:flex;
-align-items:end;
+align-items:center;
 height:50px;
 `;
 
 const Item=styled.div`
-  display:flex;
-  align-items:center;
+  display:inline-block;
+  
   cursor:pointer;
 `;
-const Navbar = () => {
+const Navbar = ({darkMode,setDarkMode}) => {
     return ( 
         <Container>
             <Wrapper>
@@ -36,7 +41,12 @@ const Navbar = () => {
                 CipherSchools
              </Logo>
              <Item>
+               <HomeRoundedIcon/>
                 Home
+             </Item>
+             <Item onClick={()=>setDarkMode(!darkMode)}>
+               <FlashlightOnRoundedIcon/>
+                Light Mode
              </Item>
             </Wrapper>
         </Container>
