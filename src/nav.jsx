@@ -47,6 +47,25 @@ display: flex;
   margin:2px;
  
 `;
+const Notify=styled.div`
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  cursor:pointer;
+  margin:2px;
+    position:relative;
+`;
+const Count =styled.div`
+  position:absolute;
+  top:-2px;
+  right:31px;
+  background-color: rgb(201, 4, 4);
+  color:white;
+  font-size:11px;
+  padding:1px 5px;
+  border-radius:10px;
+`
 const Button=styled.button`
   padding:5px 15px;
   margin-right:15px;
@@ -68,7 +87,7 @@ const Navbar = ({darkMode,setDarkMode}) => {
             <Wrapper>
              <Logo>
                 <Img src={cipher}/>
-                CipherSchools
+                CipherSchool
              </Logo> 
              <Link to="/" style={{textDecoration:"none",color:"inherit"}}>
              <Item>
@@ -80,10 +99,11 @@ const Navbar = ({darkMode,setDarkMode}) => {
                <FlashlightOnRoundedIcon/>
                 {darkMode ? "Light" :"Dark"} Mode
              </Item>
-             <Item>
+             <Notify>
                <NotificationsRoundedIcon/>
+               <Count>5</Count>
                Notifications
-             </Item>
+             </Notify>
              <Button>
                <AccountCircleRoundedIcon/>
                SIGN IN
